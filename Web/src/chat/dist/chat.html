@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- website icon -->
+  <link rel="icon" type="image/x-icon" href="../../assets/images/icons/egypt.png" />
+  <!-- website name -->
+  <title>المحادثة</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/vendors/bootstrap/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="../../assets/css/themeButton.css" />
+  <link rel="stylesheet" href="../../assets/css/chat.css" />
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+</head>
+
+<body class="chat-bg">
+  <div class="image-left-icon">
+    <img src="../../assets/images/icon-images/museumsSec-backObjLeft.png" class="img-fluid" alt="Left Icon" />
+  </div>
+  <div class="image-right-icon">
+    <img src="../../assets/images/icon-images/water-tressure-object-bottom.png" class="img-fluid" alt="Right Icon" />
+  </div>
+
+  <!-- ===============Header============= -->
+  <nav id="header" dir="rtl"></nav>
+  <!-- ==============End Header============= -->
+
+  <!-- ===============Chat Interface============= -->
+  <section id="chat">
+    <div class="container">
+      <div class="row m-auto d-flex flex-md-row flex-column-reverse justify-content-center">
+        <!-- Chat Container -->
+        <div class="col-lg-6 px-0 col-md-7 mt-4 mt-md-0">
+          <div class="chat-container text-center h-100">
+            <div class="chat-container-inner" id="chat-container">
+              <div class="typing-indicator mt-2 mb-2" id="typing-indicator">
+                <span id="hazem_made"></span>
+              </div>
+            </div>
+            <div class="chat-input">
+              <input type="text" id="message-input" class="form-control" lang="ar" pattern="[\u0600-\u06FF\s]*"
+                placeholder="... اكتب رسالتك هنا" />
+              <button id="send-button" class="btn btn-primary justify-content-evenly">
+                <i style="margin: auto 0" class="fas fa-paper-plane px-1"></i>
+                ارسال
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Character Info -->
+        <div class="col-lg-3 px-0 col-md-5">
+          <div class="character-info text-center p-3 bg-white shadow-sm d-flex flex-column justify-content-evenly">
+            <div class="imp-info">
+              <h5 class="mt-4 mb-4">بيانات الشخصية</h5>
+              <div class="character-avatar mx-auto mb-3">
+                <img id="characterImage" src="" class="img-fluid rounded-circle" alt="Character Avatar" />
+              </div>
+              <h4 id="characterName" class="character-name mb-2"></h4>
+              <h5 id="characterTitle" class="character-title mb-2"></h5>
+              <br />
+              <div class="d-flex" style="align-items: center; justify-content: center">
+                <h6 id="age" style="padding-right: 10px">ق.م</h6>
+                <h6 id="characterDate" class="character-death mb-3"></h6>
+              </div>
+            </div>
+            <div class="more-info">
+              <div class="character-small-brief mb-4">
+                <p id="characterBrief"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ==============End Chat Interface============= -->
+
+  <!-- ==============Start footer============= -->
+  <div class="footer p-3">
+    <div class="copy border-top text-center" style="border-color: #444">
+      <p class="mb-0" style="color: var(--main-color)">
+        جميع الحقوق محفوظة &copy; ٢٠٢٤
+      </p>
+      <!-- <span class="lineHead" style="top: 0;"></span> -->
+    </div>
+  </div>
+  <!-- ==============End footer============= -->
+  <script>
+    let storedValue = sessionStorage.getItem("characterName");
+    if (storedValue) {
+      document.getElementById("hazem_made").textContent =
+        "..." + storedValue + " يكتب";
+    }
+  </script>
+
+  <script src="../../assets/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../../assets/js/jquery-3.7.1.slim.js"></script>
+  <script src="../../assets/js/script.js"></script>
+  <script src="chat.js"></script>
+</body>
+
+</html>
